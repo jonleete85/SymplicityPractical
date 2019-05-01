@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Image Vote";
+}
+
+<h2>Image Vote</h2>
+<div class="container">
+    <div class="row">
+        <button><img src="../Buttons/thumbsUp.jpg" alt="ThumbsUp" width="42" height="42" onclick="location.href='@Url.Action("VoteUp", "Image", new {imageIndex = @ViewBag.ImageId})'"></button>
+        <button><img src="../Buttons/thumbsDown.jpg" alt="ThumbsDown" width="42" height="42" onclick="location.href='@Url.Action("VoteDown", "Image", new {imageIndex = @ViewBag.ImageId})'"></button>
+        <button onClick="window.location.reload();">Request New Image</button>
+        @Html.ActionLink("Voting History", "VoteHistory", "Image")
+    </div>
+</div>
+
+<img src="@Global.GetImagePath(ViewBag.ImageId)" alt="@ViewBag.ImageId"> 
+

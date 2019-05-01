@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "VoteHistory";
+}
+
+<h2>Vote History For Session @ViewBag.Session</h2>
+<p>@Html.ActionLink("Start Image Vote", "Index", "Image")</p>
+
+@foreach (var imageVote in ViewBag.ImageVotes)
+{
+    <li>@imageVote.ImageIndex</li>
+    <li>@imageVote.VoteUp</li>
+}
